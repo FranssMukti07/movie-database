@@ -38,13 +38,4 @@ const App = () => {
   );
 };
 
-// Ambil div dengan id root
-// const rootElement = document.getElementById("root");
-
-// Buat root react
-// const root = ReactDOM.createRoot(rootElement);
-
-// Me-render Component ke Root
-// root.render(<App></App>);
-
 export default App;
