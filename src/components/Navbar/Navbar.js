@@ -1,4 +1,4 @@
-import styles from "./Navbar.module.css"
+import styles from "./Navbar.module.css";
 
 const NavBar = () => {
     return (
@@ -9,11 +9,21 @@ const NavBar = () => {
                 </div>
                 <div>
                     <ul className={styles.navbar__list}>
-                        <li className={styles.navbar__item}>Home</li>
-                        <li className={styles.navbar__item}>Add Movie</li>
-                        <li className={styles.navbar__item}>Popular</li>
-                        <li className={styles.navbar__item}>Top Ranks</li>
-                        <li className={styles.navbar__item}>Community</li>
+                        <li className={styles.navbar__item}>
+                            <a href="#">Home</a>
+                        </li>
+                        <li className={styles.navbar__item}>
+                            <a href="#">Add Movie</a>
+                        </li>
+                        <li className={styles.navbar__item}>
+                            <a href="#">Popular</a>
+                        </li>
+                        <li className={styles.navbar__item}>
+                            <a href="#">Top Ranks</a>
+                        </li>
+                        <li className={styles.navbar__item}>
+                            <a href="#">Community</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
