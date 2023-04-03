@@ -1,3 +1,5 @@
+// import { useState } from "react";
+// import data from "../../utils/constants/data";
 import styles from "./AddMovieForm.module.css";
 
 const AddMovieForm = () => {
@@ -15,14 +17,26 @@ const AddMovieForm = () => {
                     <h3 className={styles.formTitle}>Add Movie</h3>
                     <div className={styles.formLabel}>
                         <label for="">Title</label>
-                        <input type="text" name="title" className={styles.inputBox} />
+                        <input
+                            type="text"
+                            name="title"
+                            className={styles.inputBox}
+                        />
                     </div>
                     <div className={styles.formLabel}>
                         <label for="">Release Date</label>
-                        <input type="date" name="date" id="" className={styles.inputBox
-                        } />
+                        <input
+                            type="date"
+                            name="date"
+                            id=""
+                            className={styles.inputBox}
+                        />
                     </div>
-                    <button className={styles.submitButton}>Submit</button>
+                    <button
+                        className={styles.submitButton}
+                    >
+                        Submit
+                    </button>
                 </div>
             </div>
         </div>

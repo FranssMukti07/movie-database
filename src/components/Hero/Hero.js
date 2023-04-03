@@ -1,11 +1,14 @@
+import data from "../../utils/constants/data";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
+    const movies = data[0];
+
     return (
         <div className={styles.container}>
             <div className={styles.hero}>
                 <div className={styles.hero__left}>
-                    <h3 className={styles.hero__title}>Spiderman</h3>
+                    <h3 className={styles.hero__title}>{movies.title}</h3>
                     <p className={styles.hero__genre}>Action, Comedy</p>
                     <p className={styles.hero__description}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -18,7 +21,7 @@ const Hero = () => {
                 <div className={styles.hero__right}>
                     <img
                         className={styles.hero__image}
-                        src="https://picsum.photos/536/354"
+                        src={movies.poster}
                         alt="Gambar Film"
                     />
                 </div>

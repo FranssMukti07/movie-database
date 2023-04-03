@@ -1,19 +1,38 @@
+import { nanoid } from "nanoid";
+import { useState } from "react";
+import data from "../../utils/constants/data";
 import Movie from "../Movie/Movie";
 import styles from "./Movies.module.css";
 
-const getRandomDate = () => {
-    const maxDate = Date.now();
-    const timestamp = Math.floor(Math.random() * maxDate);
-    return new Date(timestamp).toLocaleDateString('id-US');
-}
+// const getRandomDate = () => {
+//     const maxDate = Date.now();
+//     const timestamp = Math.floor(Math.random() * maxDate);
+//     return new Date(timestamp).toLocaleDateString('id-US');
+// }
 
 const Movies = () => {
+    // const movies = data;
+
+    const [movies, setMovies] = useState(data);
+
+    const handleClick = () => {
+        const movie = {
+            id: nanoid(),
+            title: "Jigsaw Spiral",
+            year: 2021,
+            type: "Movie",
+            poster: "https://picsum.photos/300/400",
+        };
+
+        setMovies([...movies, movie]);
+    };
+
     return (
         <div className={styles.container}>
             <section className={styles.movies}>
                 <h2 className={styles.movies__title}>Latest Movies</h2>
                 <div className={styles.movies__container}>
-                    <Movie name="Spiderman 1" date={`${getRandomDate()}`} />
+                    {/* <Movie name="Spiderman 1" date={`${getRandomDate()}`} />
                     <Movie name="Spiderman 2" date={`${getRandomDate()}`} />
                     <Movie name="Spiderman 3" date={`${getRandomDate()}`} />
                     <Movie name="Avengers 1" date={`${getRandomDate()}`} />
@@ -22,8 +41,19 @@ const Movies = () => {
                     <Movie name="Transformers 1" date={`${getRandomDate()}`} />
                     <Movie name="Transformers 2" date={`${getRandomDate()}`} />
                     <Movie name="Transformers 3" date={`${getRandomDate()}`} />
-                    <Movie name="Bullet Train" date={`${getRandomDate()}`} />
+                    <Movie name="Bullet Train" date={`${getRandomDate()}`} /> */}
+                    {movies.map((movie) => {
+                        return (
+                            <Movie
+                                key={movie.id}
+                                movie={movie.title}
+                                date={movie.year}
+                                poster={movie.poster}
+                            />
+                        );
+                    })}
                 </div>
+                <button onClick={handleClick}>Add Movie</button>
             </section>
         </div>
     );
