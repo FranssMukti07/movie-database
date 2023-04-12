@@ -15,24 +15,24 @@ const AddMovieForm = (props) => {
     const [isGenreError, setIsGenreError] = useState(false);
     const { movies, setMovies } = props;
 
-    const handleTitle = (e) => {
-        setTitle(e.target.value);
+    const handleTitle = (event) => {
+        setTitle(event.target.value);
     };
 
-    const handleDate = (e) => {
-        setDate(e.target.value);
+    const handleDate = (event) => {
+        setDate(event.target.value);
     };
 
-    const handleLink = (e) => {
-        setLink(e.target.value);
+    const handleLink = (event) => {
+        setLink(event.target.value);
     };
 
-    const handleGenre = (e) => {
-        setGenre(e.target.value);
+    const handleGenre = (event) => {
+        setGenre(event.target.value);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
         if (title === "") {
             setIsTitleError(true);
@@ -91,7 +91,7 @@ const AddMovieForm = (props) => {
                 <form className={styles.formRight} onSubmit={handleSubmit}>
                     <h3 className={styles.formTitle}>Add Movie</h3>
                     <div className={styles.formLabel}>
-                        <label for="">Title</label>
+                        <label>Title</label>
                         <input
                             type="text"
                             name="title"
@@ -110,7 +110,7 @@ const AddMovieForm = (props) => {
                         )}
                     </div>
                     <div className={styles.formLabel}>
-                        <label for="">Release Date</label>
+                        <label>Release Date</label>
                         <input
                             type="text"
                             name="date"
@@ -129,21 +129,19 @@ const AddMovieForm = (props) => {
                         )}
                     </div>
                     <div className={styles.formLabel}>
-                        <label for="">Genre</label>
+                        <label>Genre</label>
                         <select
                             name="genre"
                             value={genre}
                             className={styles.inputBox}
                             onChange={handleGenre}
                         >
-                            <option value="" selected>
-                                ---Select Genre---
-                            </option>
+                            <option value="">---Select Genre---</option>
                             <option value="Action">Action</option>
                             <option value="Drama">Drama</option>
                             <option value="Romance">Romance</option>
                             <option value="Horror">Horror</option>
-                            <option value="Comedy">Comedy</option>
+                            <option value="Comedy">Comedy</option>``
                             <option value="Thriller">Thriller</option>
                         </select>
                         {isGenreError ? (
@@ -157,7 +155,7 @@ const AddMovieForm = (props) => {
                         )}
                     </div>
                     <div className={styles.formLabel}>
-                        <label for="">Image Link</label>
+                        <label>Image Link</label>
                         <input
                             type="text"
                             name="link"
