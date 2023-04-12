@@ -15,24 +15,24 @@ const AddMovieForm = (props) => {
     const [isGenreError, setIsGenreError] = useState(false);
     const { movies, setMovies } = props;
 
-    const handleTitle = (event) => {
-        setTitle(event.target.value);
+    const handleTitle = (e) => {
+        setTitle(e.target.value);
     };
 
-    const handleDate = (event) => {
-        setDate(event.target.value);
+    const handleDate = (e) => {
+        setDate(e.target.value);
     };
 
-    const handleLink = (event) => {
-        setLink(event.target.value);
+    const handleLink = (e) => {
+        setLink(e.target.value);
     };
 
-    const handleGenre = (event) => {
-        setGenre(event.target.value);
+    const handleGenre = (e) => {
+        setGenre(e.target.value);
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
         if (title === "") {
             setIsTitleError(true);
@@ -136,7 +136,9 @@ const AddMovieForm = (props) => {
                             className={styles.inputBox}
                             onChange={handleGenre}
                         >
-                            <option value="" selected>---Select Genre---</option>
+                            <option value="" selected>
+                                ---Select Genre---
+                            </option>
                             <option value="Action">Action</option>
                             <option value="Drama">Drama</option>
                             <option value="Romance">Romance</option>
