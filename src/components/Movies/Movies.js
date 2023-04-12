@@ -1,6 +1,5 @@
-import { nanoid } from "nanoid";
-import { useState } from "react";
-import data from "../../utils/constants/data";
+// import { useState } from "react";
+// import data from "../../utils/constants/data";
 import Movie from "../Movie/Movie";
 import styles from "./Movies.module.css";
 
@@ -10,25 +9,24 @@ import styles from "./Movies.module.css";
 //     return new Date(timestamp).toLocaleDateString('id-US');
 // }
 
-const Movies = () => {
+const Movies = (props) => {
+    const { movies, setMovies } = props;
+    
     // const movies = data;
+    // const handleClick = () => {
+    //     const movie = {
+    //         id: nanoid(),
+    //         title: "Jigsaw Spiral",
+    //         year: 2021,
+    //         type: "Movie",
+    //         poster: "https://picsum.photos/300/400",
+    //     };
 
-    const [movies, setMovies] = useState(data);
-
-    const handleClick = () => {
-        const movie = {
-            id: nanoid(),
-            title: "Jigsaw Spiral",
-            year: 2021,
-            type: "Movie",
-            poster: "https://picsum.photos/300/400",
-        };
-
-        setMovies([...movies, movie]);
-    };
+    //     setMovies([...movies, movie]);
+    // };
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="latestMovies">
             <section className={styles.movies}>
                 <h2 className={styles.movies__title}>Latest Movies</h2>
                 <div className={styles.movies__container}>
@@ -53,7 +51,6 @@ const Movies = () => {
                         );
                     })}
                 </div>
-                <button onClick={handleClick}>Add Movie</button>
             </section>
         </div>
     );

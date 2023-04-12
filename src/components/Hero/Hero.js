@@ -5,7 +5,7 @@ const Hero = () => {
     const movies = data[0];
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="home">
             <div className={styles.hero}>
                 <div className={styles.hero__left}>
                     <h3 className={styles.hero__title}>{movies.title}</h3>

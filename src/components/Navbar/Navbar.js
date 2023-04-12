@@ -10,13 +10,13 @@ const NavBar = () => {
                 <div>
                     <ul className={styles.navbar__list}>
                         <li className={styles.navbar__item}>
-                            <a href="#">Home</a>
+                            <a href="#home">Home</a>
                         </li>
                         <li className={styles.navbar__item}>
-                            <a href="#">Add Movie</a>
+                            <a href="#addMovie">Add Movie</a>
                         </li>
                         <li className={styles.navbar__item}>
-                            <a href="#">Popular</a>
+                            <a href="#latestMovies">Popular</a>
                         </li>
                         <li className={styles.navbar__item}>
                             <a href="#">Top Ranks</a>
