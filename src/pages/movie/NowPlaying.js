@@ -1,13 +1,8 @@
-import Footer from "../../components/Footer/Footer";
-import NavBar from "../../components/Navbar/Navbar";
-
 const NowPlaying = () => {
     return (
-        <>
-            <NavBar />
+        <div>
             <h2>Now Playing Page</h2>
-            <Footer />
-        </>
+        </div>
     );
 };
 

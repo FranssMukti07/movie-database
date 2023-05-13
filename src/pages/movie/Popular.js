@@ -1,13 +1,8 @@
-import Footer from "../../components/Footer/Footer";
-import NavBar from "../../components/Navbar/Navbar";
-
 const Popular = () => {
     return (
-        <>
-            <NavBar />
+        <div>
             <h2>Popular Movie Page</h2>
-            <Footer />
-        </>
+        </div>
     );
 };
 

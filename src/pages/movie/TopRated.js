@@ -1,13 +1,8 @@
-import Footer from "../../components/Footer/Footer";
-import NavBar from "../../components/Navbar/Navbar";
-
 const TopRated = () => {
     return (
-        <>
-            <NavBar />
+        <div>
             <h2>Top Rated Movie Page</h2>
-            <Footer />
-        </>
+        </div>
     );
 };
 
