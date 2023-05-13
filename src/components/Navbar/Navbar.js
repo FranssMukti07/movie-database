@@ -1,5 +1,7 @@
 import styles from "./Navbar.module.css";
 
+import { Link } from "react-router-dom";
+
 const NavBar = () => {
     return (
         <div className={styles.container}>
@@ -10,19 +12,19 @@ const NavBar = () => {
                 <div>
                     <ul className={styles.navbar__list}>
                         <li className={styles.navbar__item}>
-                            <a href="#home">Home</a>
+                            <Link to={"/"}>Home</Link>
                         </li>
                         <li className={styles.navbar__item}>
-                            <a href="#addMovie">Add Movie</a>
+                            <Link to={"/movie/add-movie"}>Add Movie</Link>
+                            {/* <a href="#addMovie">Add Movie</a> */}
                         </li>
                         <li className={styles.navbar__item}>
-                            <a href="#latestMovies">Popular</a>
+                            <Link to={"/movie/popular"}>Popular</Link>
+                            {/* <a href="#latestMovies">Popular</a> */}
                         </li>
                         <li className={styles.navbar__item}>
-                            <a href="#">Top Ranks</a>
-                        </li>
-                        <li className={styles.navbar__item}>
-                            <a href="#">Community</a>
+                            <Link to={"/movie/top-ranks"}>Top Ranks</Link>
+                            {/* <a href="#">Top Ranks</a> */}
                         </li>
                     </ul>
                 </div>
