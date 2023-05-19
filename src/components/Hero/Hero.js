@@ -18,6 +18,7 @@ const Hero = () => {
                     </p>
                     <button className={styles.hero__button}>Watch</button>
                 </div>
+                
                 <div className={styles.hero__right}>
                     <img
                         className={styles.hero__image}

@@ -16,10 +16,10 @@
 
 .movies__container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 30px;
     justify-content: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     max-width: 100%;
     margin: auto;
 }

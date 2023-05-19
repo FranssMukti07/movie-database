@@ -20,6 +20,8 @@
     order: 0;
     margin-bottom: 1rem;
     flex-basis: 40%;
+    display: flex;
+    justify-content: center;
 }
 
 .hero__title {
@@ -52,6 +54,9 @@
     max-width: 70%;
     height: auto;
     border-radius: 25px;
+    -webkit-box-shadow: 10px 10px 5px #ccc;
+    -moz-box-shadow: 10px 10px 5px #ccc;
+    box-shadow: 10px 10px 5px #ccc;
 }
 
 @media (min-width: 768px) {
@@ -65,5 +70,10 @@
 
     .hero__left {
         order: 0;
+    }
+
+    .hero__right {
+        display: flex;
+        justify-content: end;
     }
 }
