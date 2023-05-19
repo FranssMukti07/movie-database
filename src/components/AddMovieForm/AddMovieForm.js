@@ -21,14 +21,6 @@ const AddMovieForm = (props) => {
     });
     const { titleError, yearError, genreError, posterError } = isError;
 
-    // const [title, setTitle] = useState("");
-    // const [date, setDate] = useState("");
-    // const [link, setLink] = useState("");
-    // const [genre, setGenre] = useState("");
-    // const [isTitleError, setIsTitleError] = useState(false);
-    // const [isDateError, setIsDateError] = useState(false);
-    // const [isLinkError, setIsLinkError] = useState(false);
-    // const [isGenreError, setIsGenreError] = useState(false);
     const { movies, setMovies } = props;
 
     const validate = () => {
@@ -94,8 +86,8 @@ const AddMovieForm = (props) => {
         event.preventDefault();
 
         if (validate() === false) {
-            addMovie()
-        };
+            addMovie();
+        }
     };
 
     // const handleTitle = (event) => {
@@ -220,13 +212,13 @@ const AddMovieForm = (props) => {
                             value={poster}
                             onChange={handleChange}
                         />
-                        {posterError && 
+                        {posterError && (
                             <Alert>
                                 <em className={styles.warning}>
                                     Link Wajib Diisi!
                                 </em>
                             </Alert>
-                        }
+                        )}
                         {/* {posterError ? (
                             <Alert>
                                 <em className={styles.warning}>
