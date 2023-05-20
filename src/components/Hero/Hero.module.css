@@ -11,6 +11,7 @@
 }
 
 .hero__left {
+    text-align: center;
     margin-bottom: 1rem;
     order: 1;
     flex-basis: 60%;
@@ -39,7 +40,6 @@
 .hero__description {
     color: #64748b;
     margin-bottom: 1rem;
-    text-align: justify;
 }
 
 .hero__button {
@@ -70,6 +70,11 @@
 
     .hero__left {
         order: 0;
+        text-align: left;
+    }
+
+    .hero__description {
+        text-align: justify;
     }
 
     .hero__right {

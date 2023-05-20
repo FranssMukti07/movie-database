@@ -90,22 +90,6 @@ const AddMovieForm = (props) => {
         }
     };
 
-    // const handleTitle = (event) => {
-    //     setTitle(event.target.value);
-    // };
-
-    // const handleDate = (event) => {
-    //     setDate(event.target.value);
-    // };
-
-    // const handleLink = (event) => {
-    //     setLink(event.target.value);
-    // };
-
-    // const handleGenre = (event) => {
-    //     setGenre(event.target.value);
-    // };
-
     return (
         <div className={styles.container} id="addMovie">
             <div className={styles.addForm}>
@@ -134,15 +118,6 @@ const AddMovieForm = (props) => {
                                 </em>
                             </Alert>
                         )}
-                        {/* {titleError ? (
-                            <Alert>
-                                <em className={styles.warning}>
-                                    Title Wajib Diisi!
-                                </em>
-                            </Alert>
-                        ) : (
-                            ""
-                        )} */}
                     </div>
                     <div className={styles.formLabel}>
                         <label>Release Date</label>
@@ -160,15 +135,6 @@ const AddMovieForm = (props) => {
                                 </em>
                             </Alert>
                         )}
-                        {/* {yearError ? (
-                            <Alert>
-                                <em className={styles.warning}>
-                                    Date Wajib Diisi!
-                                </em>
-                            </Alert>
-                        ) : (
-                            ""
-                        )} */}
                     </div>
                     <div className={styles.formLabel}>
                         <label>Genre</label>
@@ -193,15 +159,6 @@ const AddMovieForm = (props) => {
                                 </em>
                             </Alert>
                         )}
-                        {/* {genreError ? (
-                            <Alert>
-                                <em className={styles.warning}>
-                                    Genre Wajib Diisi!
-                                </em>
-                            </Alert>
-                        ) : (
-                            ""
-                        )} */}
                     </div>
                     <div className={styles.formLabel}>
                         <label>Image Link</label>
@@ -219,15 +176,6 @@ const AddMovieForm = (props) => {
                                 </em>
                             </Alert>
                         )}
-                        {/* {posterError ? (
-                            <Alert>
-                                <em className={styles.warning}>
-                                    Link Wajib Diisi!
-                                </em>
-                            </Alert>
-                        ) : (
-                            ""
-                        )} */}
                     </div>
                     <button className={styles.submitButton}>Submit</button>
                 </form>

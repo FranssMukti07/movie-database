@@ -10,9 +10,11 @@ import CreateMovie from "./pages/movie/Create";
 import Popular from "./pages/movie/Popular";
 import TopRated from "./pages/movie/TopRated";
 import Layout from "./Layout/Layout";
+import Counter from "./pages/Counter";
 
 const App = () => {
     return (
+        // <Counter/>
         <Layout>
             <Routes>
                 <Route path="/" element={<Home/>}></Route>
