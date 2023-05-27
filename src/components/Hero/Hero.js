@@ -1,4 +1,5 @@
 // import data from "../../utils/constants/data";
+import Button from "../ui/Button/Button";
 import styles from "./Hero.module.css";
 import { useState, useEffect } from "react";
 
@@ -30,7 +31,8 @@ const Hero = () => {
                     <p className={styles.hero__description}>
                         {movie.Plot}
                     </p>
-                    <button className={styles.hero__button}>Watch</button>
+                    {/* <button className={styles.hero__button}>Watch</button> */}
+                    <Button variant="primary">Watch</Button>
                 </div>
                 
                 <div className={styles.hero__right}>

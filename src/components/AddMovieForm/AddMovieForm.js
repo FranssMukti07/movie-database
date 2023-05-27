@@ -3,6 +3,7 @@ import { useState } from "react";
 import Alert from "../Alert/Alert";
 // import data from "../../utils/constants/data";
 import styles from "./AddMovieForm.module.css";
+import Button from "../ui/Button/Button";
 
 const AddMovieForm = (props) => {
     const [formData, setFormData] = useState({
@@ -177,7 +178,8 @@ const AddMovieForm = (props) => {
                             </Alert>
                         )}
                     </div>
-                    <button className={styles.submitButton}>Submit</button>
+                    <Button full>Submit</Button>
+                    {/* <button className={styles.submitButton}>Submit</button> */}
                 </form>
             </div>
         </div>

@@ -10,19 +10,29 @@ import CreateMovie from "./pages/movie/Create";
 import Popular from "./pages/movie/Popular";
 import TopRated from "./pages/movie/TopRated";
 import Layout from "./Layout/Layout";
-import Counter from "./pages/Counter";
+import Theme from "./components/ui/Theme/Theme";
+import { ThemeProvider } from "styled-components";
+// import Counter from "./pages/Counter";
 
 const App = () => {
     return (
         // <Counter/>
-        <Layout>
-            <Routes>
-                <Route path="/" element={<Home/>}></Route>
-                <Route path="/movie/add-movie" element={<CreateMovie/>}></Route>
-                <Route path="/movie/popular" element={<Popular/>}></Route>
-                <Route path="/movie/top-ranks" element={<TopRated/>}></Route>
-            </Routes>
-        </Layout>
+        <ThemeProvider theme={Theme}>
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<Home />}></Route>
+                    <Route
+                        path="/movie/add-movie"
+                        element={<CreateMovie />}
+                    ></Route>
+                    <Route path="/movie/popular" element={<Popular />}></Route>
+                    <Route
+                        path="/movie/top-ranks"
+                        element={<TopRated />}
+                    ></Route>
+                </Routes>
+            </Layout>
+        </ThemeProvider>
     );
 };
 
