@@ -1,20 +1,15 @@
-import styles from "./Movie.module.css";
+// import styles from "./Movie.module.css";
+import StyledMovie from "./Movie.styled";
 
 const Movie = (props) => {
-    const { movie, date, poster } = props
+    const { movie, date, poster } = props;
     return (
-        <div>
-            <div className={styles.movie}>
-                <img
-                    src={poster}
-                    alt="Gambar Film"
-                    className={styles.movie__image}
-                />
-                <h3 className={styles.movie__title}>{movie}</h3>
-                <p className={styles.movie__date}>{date}</p>
-            </div>
-        </div>
+        <StyledMovie>
+            <img src={poster} alt="Gambar Film" />
+            <h3>{movie}</h3>
+            <p>{date}</p>
+        </StyledMovie>
     );
-}
+};
 
 export default Movie;

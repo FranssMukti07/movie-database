@@ -29,14 +29,24 @@ const Button = styled.button`
 
     /* Tangkap props full */
     ${(props) => {
-        return props.full && css`
-            display: block;
-            width: 100%;
-            cursor: pointer;
-        `;
+        return (
+            props.full &&
+            css`
+                display: block;
+                width: 100%;
+                cursor: pointer;
+            `
+        );
     }}
 
-    /* Jika ingin memberi effect */
+    /* Tangkap props size */
+    ${(props) => {
+        if (props.size) {
+            return props.theme.size[props.size];
+        } else {
+            return props.theme.size["md"];
+        }
+    }} /* Jika ingin memberi effect */
     /* &:hover {
         background-color: red;
     }; */

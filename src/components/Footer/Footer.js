@@ -1,16 +1,17 @@
-import styles from "./Footer.module.css";
+// import styles from "./Footer.module.css";
+import StyledFooter from "./Footer.styled";
 
 const Footer = () => {
-    const currentDate = new Date().getFullYear()
+    const currentDate = new Date().getFullYear();
     return (
-        <div className={styles.container}>
-            <footer className={styles.footer}>
-                <h2 className={styles.footer__title}>Movie App</h2>
-                <p className={styles.footer__author}>
+        <StyledFooter>
+            <footer>
+                <h2>Movie App</h2>
+                <p>
                     Created By <a href="#">@FranssMukti - {currentDate}</a>
                 </p>
             </footer>
-        </div>
+        </StyledFooter>
     );
 };
 

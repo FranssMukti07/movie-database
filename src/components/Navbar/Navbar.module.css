@@ -1,5 +1,5 @@
 /* Small Screen */
-.container {
+/* .container {
     background-color: #4361ee;
     padding: 1rem;
     color: #fff;
@@ -23,15 +23,15 @@
 
 .navbar__item {
     margin-bottom: 1rem;
-}
+} */
 
-a {
+/* a {
     text-decoration: none;
     color: #fff;
-}
+} */
 
 /* Medium Screen */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .navbar {
         flex-direction: row;
         justify-content: space-between;
@@ -49,7 +49,7 @@ a {
     .navbar__item {
         margin: 0 1rem;
     }
-}
+} */
 
 /* Large Screen */
 @media (min-width: 992px) {
