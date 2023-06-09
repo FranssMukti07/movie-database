@@ -7,11 +7,12 @@ import Home from "./pages/Home";
 
 import { Routes, Route } from "react-router-dom";
 import CreateMovie from "./pages/movie/Create";
-import Popular from "./pages/movie/Popular";
+import PopularMovie from "./pages/movie/Popular";
 import TopRated from "./pages/movie/TopRated";
 import Layout from "./Layout/Layout";
 import Theme from "./components/ui/Theme/Theme";
 import { ThemeProvider } from "styled-components";
+import NowPlaying from "./pages/movie/NowPlaying";
 // import Counter from "./pages/Counter";
 
 const App = () => {
@@ -25,10 +26,14 @@ const App = () => {
                         path="/movie/add-movie"
                         element={<CreateMovie />}
                     ></Route>
-                    <Route path="/movie/popular" element={<Popular />}></Route>
+                    <Route path="/movie/popular" element={<PopularMovie />}></Route>
                     <Route
-                        path="/movie/top-ranks"
+                        path="/movie/top_rated"
                         element={<TopRated />}
+                    ></Route>
+                    <Route
+                        path="/movie/now_playing"
+                        element={<NowPlaying />}
                     ></Route>
                 </Routes>
             </Layout>

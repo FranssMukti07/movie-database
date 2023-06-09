@@ -22,7 +22,10 @@ const NavBar = () => {
                             <Link to={"/movie/popular"}>Popular</Link>
                         </li>
                         <li>
-                            <Link to={"/movie/top-ranks"}>Top Ranks</Link>
+                            <Link to={"/movie/top_rated"}>Top Rated</Link>
+                        </li>
+                        <li>
+                            <Link to={"/movie/now_playing"}>Now Playing</Link>
                         </li>
                     </ul>
                 </div>

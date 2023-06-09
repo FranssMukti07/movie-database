@@ -10,7 +10,7 @@ import styles from "./Movies.module.css";
 // }
 
 const Movies = (props) => {
-    const { movies, setMovies } = props;
+    const { movies, setMovies, title } = props;
     
     // const movies = data;
     // const handleClick = () => {
@@ -28,7 +28,7 @@ const Movies = (props) => {
     return (
         <div className={styles.container} id="latestMovies">
             <section className={styles.movies}>
-                <h2 className={styles.movies__title}>Latest Movies</h2>
+                <h2 className={styles.movies__title}>{(title) ? title : "Latest Movies"}</h2>
                 <div className={styles.movies__container}>
                     {/* <Movie name="Spiderman 1" date={`${getRandomDate()}`} />
                     <Movie name="Spiderman 2" date={`${getRandomDate()}`} />
@@ -41,14 +41,25 @@ const Movies = (props) => {
                     <Movie name="Transformers 3" date={`${getRandomDate()}`} />
                     <Movie name="Bullet Train" date={`${getRandomDate()}`} /> */}
                     {movies.map((movie) => {
-                        return (
-                            <Movie
-                                key={movie.id}
-                                movie={movie.title}
-                                date={movie.year}
-                                poster={movie.poster}
-                            />
-                        );
+                        if (title) {
+                            return (
+                                <Movie
+                                    key={movie.id}
+                                    movie={movie.title}
+                                    date={movie.release_date}
+                                    poster={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                                />
+                            );
+                        } else {
+                            return (
+                                <Movie
+                                    key={movie.id}
+                                    movie={movie.title}
+                                    date={movie.year}
+                                    poster={movie.poster}
+                                />
+                            );
+                        }
                     })}
                 </div>
             </section>

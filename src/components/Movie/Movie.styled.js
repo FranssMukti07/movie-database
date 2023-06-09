@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledMovie = styled.div`
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     margin: auto;
 
     img {
@@ -18,6 +18,7 @@ const StyledMovie = styled.div`
         color: #4361ee;
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
+        max-width: 300px;
     }
 
     p {
