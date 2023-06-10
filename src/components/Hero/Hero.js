@@ -4,11 +4,12 @@ import Button from "../ui/Button/Button";
 import StyledHero from "./Hero.styled";
 import { useState, useEffect } from "react";
 
-const Hero = () => {
+const Hero = (props) => {
     const [movie, setMovie] = useState("");
     const API_KEY = process.env.REACT_APP_API_KEY;
     const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
     const idTrailer = movie && movie.videos.results[1].key;
+    const { title, genre, overview, poster, trailer } = props;
 
     const getTrendingMovie = async () => {
         // Lakukan fetching data
@@ -36,7 +37,6 @@ const Hero = () => {
         const { data } = response;
         console.log(data);
 
-
         // Update data ke state movie
         setMovie(data);
     };
@@ -49,14 +49,14 @@ const Hero = () => {
         <StyledHero>
             <div>
                 <div className="hero__left">
-                    <h3>{movie.title}</h3>
-                    <p>{genres}</p>
-                    <p>{movie.overview}</p>
+                    <h3>{title || movie.title}</h3>
+                    <p>{genre || genres}</p>
+                    <p>{overview || movie.overview}</p>
                     <Button
                         variant="primary"
                         size="md"
                         as="a"
-                        href={`https://www.youtube.com/watch?v=${idTrailer}`}
+                        href={trailer || `https://www.youtube.com/watch?v=${idTrailer}`}
                         target="_blank"
                     >
                         Watch
@@ -64,7 +64,7 @@ const Hero = () => {
                 </div>
                 <div className="hero__right">
                     <img
-                        src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                        src={poster || `https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
                         alt="Gambar Film"
                     />
                 </div>

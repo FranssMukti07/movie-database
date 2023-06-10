@@ -10,6 +10,10 @@ const StyledHero = styled.div`
         gap: 50px;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     .hero__left {
         text-align: center;
         margin-bottom: 1rem;
