@@ -1,24 +1,24 @@
-// import data from "../../utils/constants/data";
 import axios from "axios";
 import Button from "../ui/Button/Button";
 import StyledHero from "./Hero.styled";
 import { useState, useEffect } from "react";
+import ENDPOINTS from "../../utils/constants/endpoints";
+
 
 const Hero = (props) => {
     const [movie, setMovie] = useState("");
-    const API_KEY = process.env.REACT_APP_API_KEY;
     const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
-    const idTrailer = movie && movie.videos.results[1].key;
+    const idTrailer = movie && (movie.videos.results[1]?.key ?? "");
     const { title, genre, overview, poster, trailer } = props;
 
     const getTrendingMovie = async () => {
         // Lakukan fetching data
-        const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
+        const url = ENDPOINTS.TRENDING;
 
         const response = await axios(url);
         const { results } = response.data;
 
-        return results[1];
+        return results[7];
         // setMovie(results[1]);
 
         // console.log(response);
@@ -30,9 +30,7 @@ const Hero = (props) => {
         const id = trendingMovie.id;
 
         // Fetch detail movie berdasarkan id
-        const url = `
-        https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos
-        `;
+        const url = ENDPOINTS.DETAIL(id);
         const response = await axios(url);
         const { data } = response;
         console.log(data);

@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 const StyledMovie = styled.div`
-    /* margin-bottom: 1rem; */
     margin: auto;
+    transition: transform .2s;
 
     img {
         border-radius: 25px;
         max-width: 80%;
         height: auto;
-        margin-bottom: 1rem;
         -webkit-box-shadow: 10px 10px 5px #ccc;
         -moz-box-shadow: 10px 10px 5px #ccc;
         box-shadow: 10px 10px 5px #ccc;
@@ -23,6 +22,26 @@ const StyledMovie = styled.div`
 
     p {
         color: #64748b;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .image {
+        border: 2px solid red;
+        padding: 1rem;
+    }
+
+    .info {
+        border-bottom: 2px dashed blue;
+        border-right: 2px dashed blue;
+        border-left: 2px dashed blue;
+        padding: 0.5rem;
+    }
+
+    &:hover {
+        transform: scale(1.1);
     }
 `;
 

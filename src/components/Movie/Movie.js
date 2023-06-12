@@ -6,11 +6,15 @@ const Movie = (props) => {
     const { movieId, movie, date, poster } = props;
     return (
         <StyledMovie>
-            <img src={poster} alt="Gambar Film" />
             <Link to={`/movie/${movieId}`}>
-                <h3>{movie}</h3>
+                <div className="image">
+                    <img src={poster} alt="Gambar Film" />
+                </div>
+                <div className="info">
+                    <h3>{movie}</h3>
+                    <p>{date}</p>
+                </div>
             </Link>
-            <p>{date}</p>
         </StyledMovie>
     );
 };

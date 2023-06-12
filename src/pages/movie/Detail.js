@@ -3,14 +3,14 @@ import DetailMovie from "../../components/DetailMovie/DetailMovie";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Movies from "../../components/Movies/Movies";
+import ENDPOINTS from "../../utils/constants/endpoints";
 
 const Detail = () => {
     const params = useParams();
-    const API_KEY = process.env.REACT_APP_API_KEY;
     const [movies, setMovies] = useState([]);
 
     const fetchRecomMovie = async () => {
-        const url = `https://api.themoviedb.org/3/movie/${params.id}/recommendations?api_key=${API_KEY}`;
+        const url = ENDPOINTS.RECOMMENDATIONS(params.id);
 
         const response = await axios(url);
         const {results} = response.data;
