@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import Movie from "../Movie/Movie";
 import styles from "./Movies.module.css";
+import StyledMovies from "./Movies.styled";
 
 const Movies = (props) => {
     const { title } = props;
@@ -8,9 +9,9 @@ const Movies = (props) => {
     const movies = useSelector((store) => store.movies.movies);
 
     return (
-        <div className={styles.container}>
-            <section className={styles.movies}>
-                <h2 className={styles.movies__title}>
+        <StyledMovies>
+            <section>
+                <h2>
                     {title ? title : "Latest Movies"}
                 </h2>
                 <div className={styles.movies__container}>
@@ -39,7 +40,7 @@ const Movies = (props) => {
                     })}
                 </div>
             </section>
-        </div>
+        </StyledMovies>
     );
 };
 
