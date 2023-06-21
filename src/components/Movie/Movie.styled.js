@@ -3,6 +3,8 @@ import styled from "styled-components";
 const StyledMovie = styled.div`
     margin: auto;
     transition: transform .2s;
+    border: 1px solid black;
+    width: 23%;
 
     img {
         border-radius: 25px;
@@ -17,7 +19,7 @@ const StyledMovie = styled.div`
         color: #4361ee;
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
-        max-width: 300px;
+        max-width: 100%;
     }
 
     p {

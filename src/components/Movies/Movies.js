@@ -1,32 +1,18 @@
+import { useSelector } from "react-redux";
 import Movie from "../Movie/Movie";
 import styles from "./Movies.module.css";
 
-// const getRandomDate = () => {
-//     const maxDate = Date.now();
-//     const timestamp = Math.floor(Math.random() * maxDate);
-//     return new Date(timestamp).toLocaleDateString('id-US');
-// }
-
 const Movies = (props) => {
-    const { movies, setMovies, title } = props;
-    
-    // const movies = data;
-    // const handleClick = () => {
-    //     const movie = {
-    //         id: nanoid(),
-    //         title: "Jigsaw Spiral",
-    //         year: 2021,
-    //         type: "Movie",
-    //         poster: "https://picsum.photos/300/400",
-    //     };
+    const { title } = props;
 
-    //     setMovies([...movies, movie]);
-    // };
+    const movies = useSelector((store) => store.movies.movies);
 
     return (
-        <div className={styles.container} id="latestMovies">
+        <div className={styles.container}>
             <section className={styles.movies}>
-                <h2 className={styles.movies__title}>{(title) ? title : "Latest Movies"}</h2>
+                <h2 className={styles.movies__title}>
+                    {title ? title : "Latest Movies"}
+                </h2>
                 <div className={styles.movies__container}>
                     {movies.map((movie) => {
                         if (title) {

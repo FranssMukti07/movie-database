@@ -1,11 +1,15 @@
 import { nanoid } from "nanoid";
 import { useState } from "react";
 import Alert from "../Alert/Alert";
-// import data from "../../utils/constants/data";
 import styles from "./AddMovieForm.module.css";
 import Button from "../ui/Button/Button";
+import { useNavigate } from "react-router-dom";
+import { addMovies } from "../../feature/movieSlice";
+import { useDispatch } from "react-redux";
 
 const AddMovieForm = (props) => {
+    const navigation = useNavigate();
+    const dispatch = useDispatch();
     const [formData, setFormData] = useState({
         title: "",
         year: "",
@@ -21,8 +25,6 @@ const AddMovieForm = (props) => {
         posterError: false,
     });
     const { titleError, yearError, genreError, posterError } = isError;
-
-    const { movies, setMovies } = props;
 
     const validate = () => {
         if (title === "") {
@@ -53,7 +55,7 @@ const AddMovieForm = (props) => {
                 titleError: false,
                 yearError: false,
                 genreError: false,
-                posterError: false
+                posterError: false,
             });
             return false;
         }
@@ -69,9 +71,8 @@ const AddMovieForm = (props) => {
             poster: poster,
         };
 
-        console.log(newMovie);
-
-        setMovies([...movies, newMovie]);
+        dispatch(addMovies(newMovie));
+        navigation("/");
     };
 
     const handleChange = (event) => {

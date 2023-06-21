@@ -14,9 +14,9 @@ import Theme from "./components/ui/Theme/Theme";
 import { ThemeProvider } from "styled-components";
 import NowPlaying from "./pages/movie/NowPlaying";
 import Detail from "./pages/movie/Detail";
-// import Counter from "./pages/Counter";
 
 const App = () => {
+
     return (
         // <Counter/>
         <ThemeProvider theme={Theme}>
@@ -39,10 +39,7 @@ const App = () => {
                         path="/movie/now_playing"
                         element={<NowPlaying />}
                     ></Route>
-                    <Route
-                        path={`/movie/:id`}
-                        element={<Detail />}
-                    ></Route>
+                    <Route path={`/movie/:id`} element={<Detail />}></Route>
                 </Routes>
             </Layout>
         </ThemeProvider>

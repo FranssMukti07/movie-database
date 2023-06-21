@@ -1,12 +1,14 @@
-import { useState } from "react";
 import Hero from "../../components/Hero/Hero";
 import axios from "axios";
 import { useEffect } from "react";
 import Movies from "../../components/Movies/Movies";
 import ENDPOINTS from "../../utils/constants/endpoints";
+import { useDispatch, useSelector } from "react-redux";
+import { updateMovies } from "../../feature/movieSlice";
 
 const NowPlaying = () => {
-    const [movies, setMovies] = useState([]);
+    const movies = useSelector((store) => store.movies.movies);
+    const dispatch = useDispatch();
 
     const url = ENDPOINTS.NOWPLAYING;
 
@@ -14,8 +16,7 @@ const NowPlaying = () => {
         const response = await axios(url);
         const { results } = response.data;
 
-        setMovies(results);
-        // console.log(results);
+        dispatch(updateMovies(results));
     };
 
     useEffect(() => {
@@ -25,7 +26,7 @@ const NowPlaying = () => {
     return (
         <>
             <Hero />
-            <Movies movies={movies} title="Now Playing"/>
+            <Movies movies={movies} title="Now Playing" />
         </>
     );
 };

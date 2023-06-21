@@ -5,6 +5,10 @@ const StyledNavbar = styled.div`
     padding: 1rem;
     color: #fff;
 
+    h2 {
+        margin-left: 1rem;
+    }
+
     nav {
         display: flex;
         flex-direction: column;
