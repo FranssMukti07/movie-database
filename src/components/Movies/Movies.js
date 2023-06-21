@@ -14,7 +14,7 @@ const Movies = (props) => {
                 <h2>
                     {title ? title : "Latest Movies"}
                 </h2>
-                <div className={styles.movies__container}>
+                <div>
                     {movies.map((movie) => {
                         if (title) {
                             return (

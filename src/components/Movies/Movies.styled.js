@@ -14,7 +14,7 @@ const StyledMovies = styled.div`
         color: #4361ee;
     }
 
-    & > div {
+    section > div {
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -26,7 +26,7 @@ const StyledMovies = styled.div`
 
     /* Medium Screen */
     @media (min-width: 768px) {
-        .movies__container {
+        section > div {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
