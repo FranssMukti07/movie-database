@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import Movie from "../Movie/Movie";
-import styles from "./Movies.module.css";
 import StyledMovies from "./Movies.styled";
 
 const Movies = (props) => {
@@ -22,8 +21,8 @@ const Movies = (props) => {
                                     key={movie.id}
                                     movieId={movie.id}
                                     movie={movie.title}
-                                    date={movie.release_date}
-                                    poster={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                                    date={movie.release_date || movie.year}
+                                    poster={movie.poster || `https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
                                 />
                             );
                         } else {

@@ -19,9 +19,6 @@ const Hero = (props) => {
         const { results } = response.data;
 
         return results[7];
-        // setMovie(results[1]);
-
-        // console.log(response);
     };
 
     const getDetailMovie = async () => {
@@ -33,7 +30,6 @@ const Hero = (props) => {
         const url = ENDPOINTS.DETAIL(id);
         const response = await axios(url);
         const { data } = response;
-        console.log(data);
 
         // Update data ke state movie
         setMovie(data);

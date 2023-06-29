@@ -11,17 +11,13 @@ const Counter = () => {
             setResult(result + 2);
         }
 
-        console.log(result);
     };
     
     useEffect(() => {
-        console.log("## Component di-mount/di-update");
 
         // Akses DOM
         document.title = `Angka: ${result}`
     });
-
-    console.log("## Component di-render");
 
     return (
         <div>

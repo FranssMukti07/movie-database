@@ -17,7 +17,6 @@ const DetailMovie = () => {
         const { data } = response;
 
         setMovie(data);
-        // console.log(data);
     };
 
     useEffect(() => {
